@@ -1,6 +1,5 @@
-import { RouterContext, Status } from "https://deno.land/x/oak/mod.ts";
+import { RouterContext } from "https://deno.land/x/oak/mod.ts";
 import Logger from "../logger/logger.ts";
-import { MimeTypes } from "../types/types.ts";
 import Responder from "../utils/responder.ts";
 
 export interface IApiController {
@@ -13,7 +12,7 @@ export default class ApiController implements IApiController {
     private responder: Responder
   ) {}
 
-  public sum = (ctx: RouterContext): void => {
+  public sum = async (ctx: RouterContext): Promise<void> => {
     if (!ctx.params.num1 || !ctx.params.num2) {
       return this.responder.badRequest(ctx);
     }

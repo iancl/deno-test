@@ -11,3 +11,8 @@ export type JsonResponse = {
   message?: string,
   result?: string | number
 }
+
+export type SumParams = {
+  num1: string | undefined,
+  num2: string | undefined
+}

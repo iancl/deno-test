@@ -37,3 +37,5 @@ api/sum
   result: number
 }
 ```
+# TODO:
+sum endpoint returns 400 all the time. Need to extract params from request.body
