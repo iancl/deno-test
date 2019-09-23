@@ -23,19 +23,18 @@ sudo chmod a+x start.sh
 ```
 
 # Endpoints
+
+## healthcheck
 api/healthcheck
 - returns 200 if server is running
 
-api/sum
-- expects 2 body params
+## sum
+api/sum/num1/num2
+- expects 2 params
   - num1 and num2
   - if params do not exist it will return 400
   - if params exist and are valid it will return 200 and the sum of them:
 
-```
-{
-  result: number
-}
-```
-# TODO:
-sum endpoint returns 400 all the time. Need to extract params from request.body
+### example
+curl -X GET localhost:8080/api/sum/2/2
+// response: {"result": 4}

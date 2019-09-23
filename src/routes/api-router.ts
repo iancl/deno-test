@@ -26,7 +26,7 @@ export default class ApiRouter implements IRouter {
       this.responder.success(ctx, {message: 'ok'})
     });
 
-    this.router.post('/api/sum', this.controller.sum);
+    this.router.post('/api/sum/:num1/:num2', this.controller.sum);
   }
 
   public mount(app: Application): void {
